@@ -1,0 +1,83 @@
+// ********** Fonts ********** 
+@font-face {
+  font-family: "Inter-ExtraBold";
+  src: url(../fonts/Inter-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Merriweather-Light";
+  src: url(../fonts/Merriweather-Light.ttf);
+}
+
+$font1: Inter-ExtraBold, sans-serif;
+$font2: Merriweather-Light, serif;
+
+// ********** Variables ********** 
+$white: rgb(250, 250, 250);
+$black: rgb(15, 15, 15);
+$color1: rgb(233, 233, 233);
+$color2: rgb(212, 212, 212);
+$color3: rgb(160, 160, 160);
+$color4: rgb(110, 110, 110);
+$color5: rgb(74, 155, 212);
+
+// ********** Mixins ********** 
+@mixin titleSetting {
+  font-family: $font1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@mixin centerChild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ********** General settings ********** 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  background: url(../image/bg.jpg) center/cover fixed;
+  font-family: $font2;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1350px;
+
+  @media screen and (max-width:480px) {
+    width: 92%;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $black;
+    animation: animBefore 1.5s ease-in-out forwards;
+    animation-delay: 0.15s;
+
+    @keyframes animBefore {
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+a, a:visited {
+  color: $black;
+  text-decoration: none;
+}

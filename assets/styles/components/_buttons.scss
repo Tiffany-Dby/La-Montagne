@@ -1,0 +1,36 @@
+.button {
+  @include titleSetting;
+  display: inline-block;
+  border: solid 2px $black;
+  padding: 15px 45px;
+  background: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.5s ease;
+  
+  a {
+    transition: 0.5s ease;
+  }
+  
+  &:hover {
+    transform: scale(1.05);
+    border: solid 2px $color5;
+    a {
+      color: $color5;
+    }
+  }
+}
+
+.btn-form {
+  .button {
+    padding: 17px 26px;
+    color: $color4;
+    border: solid 2px $color4;
+
+    &:hover {
+      transform: scale(1.05);
+      border: solid 2px $color5;
+      color: $color5;
+    }
+  }
+}

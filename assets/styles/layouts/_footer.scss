@@ -1,0 +1,160 @@
+footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: $color1;
+  margin: 35px 0 80px;
+
+  @media screen and (max-width:1024px) {
+    grid-template-columns: 1fr;
+  }
+
+  label, h4 {
+    @include titleSetting;
+    font-size: 0.9rem;
+    color: $color4;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 70px 8%;
+    border-right: solid 1px $color2;
+    text-align: left;
+    
+    & > *:not(.btn-form) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 22px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    label, input[type="text"], textarea {
+      transition: 0.3s ease;
+    }
+    
+    input[type="text"], textarea {
+      background: none;
+      outline: none;
+      border: solid 1px $color2;
+      border-radius: 4px;
+      font-family: $font2;
+      padding: 15px;
+    }
+    
+    input[type="text"] {
+      height: 55px;
+    }
+    
+    textarea {
+      resize: none;
+      height: 250px;
+    }
+    
+    input[type="text"]:focus, textarea:focus {
+      color: $color5;
+      font-weight: bold;
+      border: solid 1px $color5;
+    }
+    
+    div:focus-within label {
+      transform: scale(0.97);
+      color: $color5;
+    }
+    
+    .btn-form {
+      padding-top: 30px;
+    }
+  }
+
+  .contacts {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    @media screen and (max-width:1024px) {
+      min-height: 600px;
+    }
+    @media screen and (max-width:480px) {
+      h4 {
+        font-size: 0.8rem;
+      }
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: 27% 73%;
+      align-items: center;
+      text-align: left;
+      padding-left: 8%;
+
+      @media screen and (max-width:1024px) {
+        &:first-child {
+          border-top: solid 1px $color2;
+          padding-bottom: 36px;
+        }
+      }
+      @media screen and (max-width:480px) {
+        grid-template-columns: 33% 67%;
+      }
+
+      &:not(:last-child) {
+        border-bottom: solid 1px $color2;
+      }
+
+      p {
+        line-height: 33px;
+        color: grey;
+
+        @media screen and (max-width:480px) {
+          font-size: 0.7rem;
+        }
+      }
+
+      .social-medias {
+        display: flex;
+        justify-content: space-between;
+        max-width: 250px;
+
+        @media screen and (max-width:440px) {
+          justify-content: space-evenly;          
+        }
+
+        li {
+          font-size: 1.2rem;
+          height: 48px;
+          width: 48px;
+          border: solid 1px $color2;
+          border-radius: 150px;
+          transition: 0.2s ease-in-out;
+
+          @media screen and (max-width:480px) {
+            font-size: 0.9rem;
+            height: 30px;
+            width: 30px;
+            &:last-child{
+              margin-right: 20px;
+            }
+          }
+          
+          &:hover {
+            border: solid 1px $color5;
+          }
+          
+          a {
+            @include centerChild;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s ease-in-out;
+            
+            &:hover {
+              color: $color5;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,57 @@
+header {
+  height: 100vh;
+  color: $white;
+  position: relative;
+  
+  .banner {
+    @include centerChild;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: bannerAnim 1.5s ease forwards;
+
+    @keyframes bannerAnim {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      @include titleSetting;
+      font-size: 5rem;
+      letter-spacing: 7px;
+
+      @media screen and (max-width:1024px) {
+        font-size: 4rem;
+      }
+      @media screen and (max-width:768px) {
+        font-size: 3rem;
+      }
+      @media screen and (max-width:480px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      margin: 45px 0 75px;
+      font-size: 1.25rem;
+      font-style: italic;
+
+      @media screen and (max-width:1024px) {
+        font-size: 1.15rem;
+      }
+    }
+
+    i {
+      @include centerChild;
+      border: solid 2px $white;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      height: 70px;
+      width: 70px;
+      color: $white;
+    }
+  }
+}
